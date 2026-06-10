@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spack_solve_visualize"
+description = "Extension to visualize intermediate models during Spack spec solving"
+version = "0.1.0"
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "Apache-2.0 OR MIT"}
+
+[project.entry-points."spack.extensions"]
+spack_solve_visualize = "spack_solve_visualize:get_spack_extension_paths"
+
+[project.entry-points."spack.config"]
+spack_solve_visualize = "spack_solve_visualize:get_spack_config_dir"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["**/*"]
